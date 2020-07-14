@@ -32,8 +32,8 @@ app.get("/", function(req, res) {
 
 
 // The code below points the server to a series of "route" files.
-setupApiRoutes(app);
-setupHtmlRoutes(app);
+// setupApiRoutes(app);
+// setupHtmlRoutes(app);
 
   // The below code effectively "starts" our server
 app.listen(PORT, () => {
