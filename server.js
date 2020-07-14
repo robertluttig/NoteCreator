@@ -1,5 +1,7 @@
 const express = require("express");
 const path = require("path");
+const setupApiRoutes = require("./routes/apiRoutes");
+const setupHtmlRoutes = require("./routes/htmlRoutes");
 
 
 // we are creating an "express" server
@@ -18,8 +20,6 @@ app.use(express.json());
 // public directory.
 app.use(express.static("public"));
  
-// app.use("/api", apiRoutes);
-// app.use("/", htmlRoutes);
 
 // Serving from index.html
 app.get("/", function(req, res) {
@@ -30,8 +30,10 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "/public/notes.html"));
   });
 
-// app.use('/index.html', express.static(path.join(__dirname, '/index.html')))
-// app.use('/notes.html', express.static(path.join(__dirname, '/notes.html')))
+
+// The code below points the server to a series of "route" files.
+setupApiRoutes(app);
+setupHtmlRoutes(app);
 
   // The below code effectively "starts" our server
 app.listen(PORT, () => {
