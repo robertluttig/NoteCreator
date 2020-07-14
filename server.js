@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
-const setupApiRoutes = require("./routes/apiRoutes");
-const setupHtmlRoutes = require("./routes/htmlRoutes");
+// const setupApiRoutes = require("./routes/apiRoutes");
+// const setupHtmlRoutes = require("./routes/htmlRoutes");
 
 
 // we are creating an "express" server
